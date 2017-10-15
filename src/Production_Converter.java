@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class Production_Converter {
-
+    //tconst	titleType	primaryTitle	originalTitle	isAdult	startYear	endYear	runtimeMinutes	genres
     public static void main(String[] args) {
         Stream<String> basicsLines = getFileStream(new File("/Users/zach/Documents/Databases/data/title.basics.tsv"));
 
@@ -21,11 +21,12 @@ public class Production_Converter {
             String originalTitle = parts[3];
             String isAdult = parts[4];
             String startYear = parts[5];
-            String runtime = parts[6];
-            String[] genres = parts[7].split(",");
+            String endYear = parts[6];
+            String runtime = parts[7];
+            String[] genres = parts[8].split(",");
 
-            PRODUCTION_LINES.add(tConst + "\t" + titleType + "\t" + primaryTitle + "\t" + originalTitle + "\t" + isAdult + "\t" + startYear + "\t" + runtime);
-
+            PRODUCTION_LINES.add(tConst + "\t" + titleType + "\t" + primaryTitle + "\t" + originalTitle +
+                    "\t" + isAdult + "\t" + startYear + "\t" + endYear + "\t" + runtime);
 
             for (String genre : genres) {
                 GENRE_LINES.add(tConst + "\t" + genre);
