@@ -26,11 +26,15 @@ public class Person_Converter {
             PERSON_LINES.add(nConst + "\t" + primaryName + "\t" + birthYear + "\t" + deathYear);
 
             for (String prof : professions) {
-                PROFESSIONS_LINES.add(nConst + "\t" + prof);
+                if (!prof.equals("\\N")) {
+                    PROFESSIONS_LINES.add(nConst + "\t" + prof);
+                }
             }
 
             for (String knownF : knownFor) {
-                KNOWN_FOR_LINES.add(nConst + "\t" + knownF);
+                if (!knownF.equals("\\N")) {
+                    KNOWN_FOR_LINES.add(nConst + "\t" + knownF);
+                }
             }
         });
 
