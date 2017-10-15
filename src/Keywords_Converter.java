@@ -28,7 +28,9 @@ public class Keywords_Converter {
 
 
             for (String genre : genres) {
-                GENRE_LINES.add(tConst + "\t" + genre);
+                if (!genre.equals("\\N")) {
+                    GENRE_LINES.add(tConst + "\t" + genre);
+                }
             }
         });
 
