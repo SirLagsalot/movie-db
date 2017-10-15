@@ -29,7 +29,9 @@ public class Production_Converter {
                     "\t" + isAdult + "\t" + startYear + "\t" + endYear + "\t" + runtime);
 
             for (String genre : genres) {
-                GENRE_LINES.add(tConst + "\t" + genre);
+                if (!genre.equals("\\N")) {
+                    GENRE_LINES.add(tConst + "\t" + genre);
+                }
             }
         });
 
